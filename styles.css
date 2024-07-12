@@ -52,6 +52,12 @@
    list-style-type: none;
    }
 
+   /* Estilos para la sección de habilidades */
+   #certificados {
+   padding: 50px;
+   background-color: #BCE5F5;
+   }
+
    /* Estilos para la sección de cert */
    #certificados {
    padding: 50px;
