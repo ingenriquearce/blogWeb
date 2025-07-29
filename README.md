@@ -47,12 +47,5 @@ Accede a mis redes profesionales (GitHub, LinkedIn) y sociales (Instagram, Faceb
 
 ---
 
-## 🔗 Sitio en vivo
-
-👉 Puedes verlo en: [https://tuusuario.github.io/](https://tuusuario.github.io/)  
-*(reemplaza con tu URL real)*
-
----
-
 Gracias por visitar 💙  
 ¿Quieres colaborar? ¡Estoy abierto a nuevas oportunidades y proyectos interesantes!
