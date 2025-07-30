@@ -111,3 +111,17 @@ button:hover {
     padding: 40px;
   }
 }
+
+.experience-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.experience-link:hover {
+  color: #1E3C72;
+  text-decoration: underline;
+}
