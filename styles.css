@@ -156,3 +156,11 @@ main{padding:28px 0 60px}
 .project-meta{list-style:none;padding:0;margin:.25rem 0 0;display:grid;gap:6px}
 .project-meta li{font-size:14px;color:var(--text)}
 .project-meta li span{color:var(--muted);margin-right:6px}
+
+#experience .card.stack h3{margin:0 0 .5rem}
+#experience .card.stack h4{
+  margin:.6rem 0 .25rem;
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+}
