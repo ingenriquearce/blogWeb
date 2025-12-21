@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
@@ -16,7 +15,7 @@
         <div class="avatar" aria-hidden="true"></div>
         <div>
           <h1 class="brand-title">Enrique Arce</h1>
-          <p class="brand-sub">Computer Engineer · Data & Software</p>
+          <p class="brand-sub">Computer Engineer</p>
         </div>
       </div>
 
@@ -34,8 +33,8 @@
       <div class="hero">
         <img class="hero-photo" src="images/fotoCVFormal.png" alt="Photo of Enrique Arce" />
         <div class="hero-text">
-          <h2>I build clean, measurable data and backend solutions</h2>
-          <p>Specialized in Data Analytics and Data Engineering. Python, SQL, Power BI, FastAPI. Reproducible pipelines and business-ready deliverables.</p>
+          <h2>Enrique Arce - Software AI Automation Engineer</h2>
+          <p>Specialized in Data, Automation and Software Engineering. Reproducible data pipelines, automations with AI features and end-to-end web applications.</p>
           <div class="cta-row">
             <a class="btn" href="https://www.linkedin.com/in/enrique-arce-alejandro-2204991b5/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/ingenriquearce" target="_blank" rel="noopener">GitHub</a>
@@ -44,7 +43,6 @@
       </div>
 
       <div class="cards">
-        <!-- Reemplaza "Core Stack" por Contact -->
         <article class="card">
           <h3>Contact</h3>
           <ul class="list">
@@ -73,7 +71,6 @@
     <section id="experience" class="panel" role="tabpanel" aria-label="Professional Experience">
       <h2>Professional Experience</h2>
       <ul class="timeline">
-
         <li>
           <div class="time-head">
             <span class="time-role">Technology Risk Auditor</span>
@@ -117,7 +114,6 @@
             Created SQL views and managed large-scale data transformations for executive reporting and business analysis.
           </p>
         </li>
-
       </ul>
 
       <div class="card stack">
@@ -156,21 +152,37 @@
               <span class="pill">Power Apps</span>
             </div>
 
-            <h4>Cloud &amp; Ops</h4>
+            <h4>AI</h4>
             <div class="pillbox">
-              <span class="pill">Git</span>
-              <span class="pill">CI-ready Scripts</span>
-              <span class="pill">Logging</span>
+              <span class="pill">LangChain</span>
+              <span class="pill">LangGraph</span>
+              <span class="pill">Ollama and Open AI</span>
             </div>
 
             <h4>Other</h4>
             <div class="pillbox">
               <span class="pill">Microsoft Lists</span>
               <span class="pill">Excel</span>
-              <span class="pill">Regex</span>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Certificates (reubicado aquí, sin pestaña extra) -->
+      <div class="card stack">
+        <h3>Certificates</h3>
+        <ul class="list">
+          <li><a class="link" href="certificates/python-intermedio.pdf" target="_blank" rel="noopener">Python Intermediate</a></li>
+          <li><a class="link" href="certificates/matplotlib_seaborn2024.pdf" target="_blank" rel="noopener">Matplotlib & Seaborn</a></li>
+          <li><a class="link" href="certificates/powerbi.pdf" target="_blank" rel="noopener">Power BI</a></li>
+          <li><a class="link" href="certificates/bds.pdf" target="_blank" rel="noopener">Databases</a></li>
+          <li><a class="link" href="certificates/fundamentos-ingenieria-datos.pdf" target="_blank" rel="noopener">Data Engineering Fundamentals</a></li>
+          <li><a class="link" href="certificates/fundamentos-etl.pdf" target="_blank" rel="noopener">ETL Fundamentals</a></li>
+          <li><a class="link" href="certificates/terminal-linea-comandos.pdf" target="_blank" rel="noopener">Terminal & CMD</a></li>
+          <li><a class="link" href="certificates/analisis-negocios-data-science.pdf" target="_blank" rel="noopener">Business Analytics</a></li>
+          <li><a class="link" href="certificates/excel-intermedio.pdf" target="_blank" rel="noopener">Excel Intermediate</a></li>
+          <li><a class="link" href="https://cenace.upsa.edu.bo/certificados/x84afkeusv0mi1xhzffk0ithqswf9v7e" target="_blank" rel="noopener">CENACE — Advanced English</a></li>
+        </ul>
       </div>
     </section>
 
@@ -285,41 +297,7 @@
     <button class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
   </div>
 
-  <script>
-    // Tabs
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".panel");
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-        tabs.forEach(b => {
-          b.classList.toggle("is-active", b === btn);
-          b.setAttribute("aria-selected", b === btn ? "true" : "false");
-        });
-        panels.forEach(sec => sec.classList.toggle("is-visible", sec.id === target));
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    });
-
-    // Theme
-    const root = document.documentElement;
-    const themeButtons = document.querySelectorAll(".theme-btn");
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      root.setAttribute("data-theme", saved);
-      themeButtons.forEach(b => b.setAttribute("aria-pressed", b.dataset.theme === saved ? "true" : "false"));
-    }
-    themeButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const t = btn.dataset.theme;
-        root.setAttribute("data-theme", t);
-        localStorage.setItem("theme", t);
-        themeButtons.forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
-      });
-    });
-
-    // Year
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <!-- External JS -->
+  <script src="app.js" defer></script>
 </body>
 </html>
