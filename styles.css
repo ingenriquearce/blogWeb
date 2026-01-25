@@ -1,4 +1,6 @@
-/* styles.css */
+/* styles.css — full, clean version (includes: spacing between header and body, nice cert links, footer spacing) */
+
+/* ===== Theme tokens ===== */
 :root{
   --bg:#0b0d10; --elev:#111418; --card:#0e1116; --stroke:#1b2027;
   --text:#e7ecf2; --muted:#a9b1bb;
@@ -6,8 +8,9 @@
 
   --r:16px; --r2:12px;
   --gap:18px; --pad:18px;
+
   --shadow:0 10px 26px rgba(0,0,0,.16);
-  --shadow2:0 14px 34px rgba(0,0,0,.22);
+  --shadow2:0 16px 44px rgba(0,0,0,.22);
   --inset:inset 0 1px 0 rgba(255,255,255,.03);
 }
 
@@ -21,6 +24,7 @@
   --inset:inset 0 1px 0 rgba(255,255,255,.65);
 }
 
+/* ===== Base ===== */
 *{box-sizing:border-box}
 html,body{height:100%}
 
@@ -33,21 +37,29 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.55;
 
-  /* clave para footer */
   min-height:100vh;
   display:flex;
   flex-direction:column;
 }
 
-.container{max-width:1100px;margin:0 auto;padding:0 22px}
+/* Avoid default blue links anywhere */
+a{color:inherit}
 
+/* Container */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 22px;
+}
+
+/* Focus */
 :focus-visible{
   outline:2px solid color-mix(in oklab, var(--acc) 55%, transparent);
   outline-offset:2px;
   border-radius:10px;
 }
 
-/* Header */
+/* ===== Header ===== */
 .site-header{
   position:sticky;top:0;z-index:50;
   backdrop-filter:saturate(140%) blur(10px);
@@ -55,8 +67,21 @@ body{
   border-bottom:1px solid var(--stroke);
 }
 
-.header-content{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:14px}
-.brand{display:flex;gap:12px;align-items:center}
+/* More “air” inside header */
+.site-header .container{
+  padding-left:28px;
+  padding-right:28px;
+}
+
+.header-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+  gap:22px;
+}
+
+.brand{display:flex;gap:14px;align-items:center;padding:6px 0}
 .brand-title{font-size:16px;line-height:1.1;margin:0;letter-spacing:-0.01em}
 .brand-sub{margin:0;color:var(--muted);font-size:12px}
 
@@ -68,35 +93,47 @@ body{
 }
 
 /* Tabs */
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;padding:6px 0}
 .tab{
   appearance:none;cursor:pointer;
   border:1px solid var(--stroke);
   background:color-mix(in oklab, var(--elev) 92%, transparent);
   color:var(--text);
-  padding:10px 12px;border-radius:var(--r2);font-size:13px;
+  padding:11px 14px;
+  border-radius:14px;
+  font-size:13px;
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
 }
-.tab:hover{transform:translateY(-1px);border-color:color-mix(in oklab,var(--text) 14%, var(--stroke));box-shadow:0 10px 22px rgba(0,0,0,.06)}
+.tab:hover{
+  transform:translateY(-1px);
+  border-color:color-mix(in oklab,var(--text) 14%, var(--stroke));
+  box-shadow:0 10px 22px rgba(0,0,0,.06);
+}
 .tab.is-active{
   background:var(--acc-ghost);
   border-color:color-mix(in oklab,var(--acc) 28%, var(--stroke));
   box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--acc) 30%, var(--stroke)), 0 10px 22px rgba(0,0,0,.06);
 }
 
-/* Main */
+/* ===== Main ===== */
+/* IMPORTANT: This is the “space between header and body” you want */
 main{
   flex:1;
-  padding:34px 0 96px; /* aire vs footer + theme switcher */
+  padding:46px 0 140px; /* top padding = gap under header */
 }
 
+/* Panels */
 .panel{display:none}
-.panel.is-visible{
-  display:block;
-  padding-bottom:28px; /* aire real antes del footer */
-  animation:fade .18s ease;
-}
+.panel.is-visible{display:block;padding-top:6px;animation:fade .18s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Section titles */
+.panel > h2{
+  margin:0 0 14px;
+  font-size:22px;
+  line-height:1.2;
+  letter-spacing:-0.015em;
+}
 
 /* Surfaces */
 :is(.hero,.card,.timeline li,.theme-switcher){
@@ -106,7 +143,7 @@ main{
   box-shadow:var(--inset);
 }
 
-/* Hero */
+/* ===== Hero ===== */
 .hero{
   display:grid;
   grid-template-columns:120px 1fr;
@@ -120,72 +157,147 @@ main{
   background:color-mix(in oklab,var(--bg), #fff 5%);
   box-shadow:0 10px 22px rgba(0,0,0,.08);
 }
-.hero-text h2{margin:0 0 10px;font-size:26px;line-height:1.18;letter-spacing:-0.015em}
+.hero-text h2{
+  margin:0 0 10px;
+  font-size:26px;
+  line-height:1.18;
+  letter-spacing:-0.015em;
+}
 .hero-text p{margin:0;color:var(--muted)}
 .cta-row{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 
 /* Buttons */
 .btn{
-  display:inline-block;text-decoration:none;font-weight:600;
+  display:inline-block;
+  text-decoration:none;
+  font-weight:600;
   border:1px solid color-mix(in oklab,var(--acc) 28%, var(--stroke));
   background:var(--acc-ghost);
   color:var(--text);
-  padding:10px 14px;border-radius:var(--r2);
+  padding:10px 14px;
+  border-radius:var(--r2);
   box-shadow:0 10px 22px rgba(0,0,0,.06);
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
 }
-.btn:hover{transform:translateY(-1px);border-color:color-mix(in oklab,var(--acc) 48%, var(--stroke));box-shadow:0 14px 30px rgba(0,0,0,.10)}
+.btn:hover{
+  transform:translateY(-1px);
+  border-color:color-mix(in oklab,var(--acc) 48%, var(--stroke));
+  box-shadow:0 14px 30px rgba(0,0,0,.10);
+}
 .btn.ghost{background:transparent;box-shadow:none}
 .btn.small{padding:8px 12px;font-size:13px}
 
-/* Grids & Cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:var(--gap)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:14px}
-
-.card{padding:var(--pad);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-.card h3{margin:0 0 10px;letter-spacing:-0.01em}
-.card p{margin:0;color:var(--muted)}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:color-mix(in oklab, var(--text) 10%, var(--stroke))}
-
-/* Projects */
-.project .project-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
-.chip{
-  font-size:12px;padding:5px 9px;border-radius:999px;white-space:nowrap;
-  border:1px solid var(--stroke);
-  background:color-mix(in oklab,var(--bg) 82%, #fff 18%);
-  color:var(--muted);
+/* ===== Cards & grids ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:var(--gap);
+  margin-top:var(--gap);
 }
-.project-desc{color:var(--muted);margin:8px 0 10px}
-.project-meta{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.project-meta li{font-size:14px;color:var(--text)}
-.project-meta li span{color:var(--muted);margin-right:6px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:var(--gap);
+  margin-top:14px;
+}
 
-/* Timeline */
+.card{
+  padding:var(--pad);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.card h3{margin:0 0 10px;letter-spacing:-0.01em}
+.card p{margin:10px 0 0;color:var(--muted)}
+.card p:first-of-type{margin-top:0}
+
+/* Hover only where it makes sense */
+#experience .card:hover,
+#experience .timeline li:hover,
+#projects .card.project:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+  border-color:color-mix(in oklab, var(--text) 10%, var(--stroke));
+}
+
+/* ===== HOME Contact: non-links must NOT be clickable ===== */
+/* You used <a class="hero-text"> for email & location.
+   We force those to behave like text (not links). Only .link is clickable. */
+#home .list a.hero-text{
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:none;
+  cursor:default;
+  pointer-events:none;
+}
+
+/* Home clickable links */
+#home .list a.link{
+  color:var(--text);
+  text-decoration:none;
+  border-bottom:1px dashed color-mix(in oklab,var(--acc) 35%, var(--stroke));
+  padding-bottom:2px;
+  transition:transform .15s ease, border-color .15s ease;
+}
+#home .list a.link:hover{
+  border-bottom-color:var(--acc);
+  transform:translateY(-1px);
+}
+
+/* ===== Timeline ===== */
 .timeline{list-style:none;padding:0;margin:0;display:grid;gap:var(--gap)}
-.timeline li{padding:var(--pad);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-.timeline li:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:color-mix(in oklab, var(--text) 10%, var(--stroke))}
+.timeline li{padding:var(--pad)}
 .time-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .time-role{font-weight:700;letter-spacing:-0.01em}
 .time-org{color:var(--muted)}
 .time-desc{margin:10px 0 0;color:var(--muted)}
 
-/* Split / Lists / Pills */
+/* ===== Split / Lists / Pills ===== */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 .list{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.pillbox{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+
+.pillbox{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
 .pill{
-  font-size:12px;border:1px solid var(--stroke);
+  font-size:12px;
+  border:1px solid var(--stroke);
   background:color-mix(in oklab,var(--bg) 86%, #fff 14%);
-  padding:6px 10px;border-radius:999px;
+  padding:6px 10px;
+  border-radius:999px;
 }
 
-.link{
-  color:var(--text);text-decoration:none;
-  border-bottom:1px dashed color-mix(in oklab,var(--acc) 35%, var(--stroke));
-}
-.link:hover{border-bottom-color:var(--acc)}
+/* ===== Projects ===== */
+.project{display:flex;flex-direction:column;gap:10px}
+.project .project-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
 
-/* Notice */
+.chip{
+  font-size:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  white-space:nowrap;
+  border:1px solid var(--stroke);
+  background:color-mix(in oklab,var(--bg) 82%, #fff 18%);
+  color:var(--muted);
+}
+
+.project-desc{color:var(--muted);margin:0}
+.project-meta{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.project-meta li{font-size:14px;color:var(--text)}
+.project-meta li span{color:var(--muted);margin-right:6px}
+
+/* Projects “feel clickable” */
+#projects .card.project{position:relative}
+#projects .card.project::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:var(--r);
+  pointer-events:none;
+  opacity:0;
+  box-shadow:var(--shadow2);
+  transition:opacity .18s ease;
+}
+#projects .card.project:hover::after{opacity:1}
+#projects .btn{align-self:flex-start}
+
+/* ===== Notice ===== */
 .notice{
   border:1px solid var(--stroke);
   background:var(--acc-ghost);
@@ -197,20 +309,37 @@ main{
   box-shadow:var(--inset);
 }
 
+/* ===== Certificates: nice links (no blue, not ugly) ===== */
+#experience .card.stack .list li{padding:6px 0}
+
+#experience .card.stack .list a.link{
+  display:inline-block;
+  color:var(--text);
+  text-decoration:none;
+  border-bottom:1px dashed color-mix(in oklab,var(--acc) 35%, var(--stroke));
+  padding-bottom:2px;
+  transition:transform .15s ease, border-color .15s ease;
+}
+#experience .card.stack .list a.link:hover{
+  border-bottom-color:var(--acc);
+  transform:translateY(-1px);
+}
+
 /* Experience tweaks */
 #experience .card.stack{margin-top:18px}
 #experience .card.stack h3{margin:0 0 10px}
 #experience .card.stack h4{margin:14px 0 6px;color:var(--muted);font-weight:600;font-size:13px}
 
-/* Footer (con aire + look más limpio) */
+/* ===== Footer ===== */
 .site-footer{
   border-top:1px solid var(--stroke);
   background:color-mix(in oklab, var(--elev) 92%, transparent);
-  padding:26px 0 30px;
+  padding:34px 0 40px;
+  margin-top:18px;
 }
 .site-footer p{margin:0;text-align:center;color:var(--muted)}
 
-/* Theme switcher */
+/* ===== Theme switcher ===== */
 .theme-switcher{
   position:fixed;right:16px;bottom:16px;z-index:60;
   display:flex;gap:6px;padding:6px;border-radius:14px;
@@ -227,17 +356,47 @@ main{
   transition:transform .15s ease, background .15s ease, border-color .15s ease;
 }
 .theme-btn:hover{transform:translateY(-1px)}
-.theme-btn[aria-pressed="true"]{background:var(--acc-ghost);border-color:color-mix(in oklab,var(--acc) 35%, var(--stroke))}
+.theme-btn[aria-pressed="true"]{
+  background:var(--acc-ghost);
+  border-color:color-mix(in oklab,var(--acc) 35%, var(--stroke));
+}
 
-/* Responsive */
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
 @media (max-width: 900px){
-  main{padding:28px 0 96px}
+  /* keep the “gap under header” */
+  main{padding:38px 0 140px}
   .hero{grid-template-columns:1fr;gap:16px}
-  .hero-photo{width:100%;height:200px}
-  .cards,.grid{grid-template-columns:1fr 1fr}
+  .hero-photo{width:100%;height:220px}
+  .site-header .container{padding-left:20px;padding-right:20px}
+  .header-content{gap:16px}
 }
 @media (max-width: 620px){
   .container{padding:0 16px}
-  .cards,.grid,.split{grid-template-columns:1fr}
+  .grid,.split,.cards{grid-template-columns:1fr}
   .brand-sub{display:none}
+  main{padding:34px 0 160px}
+  .site-header .container{padding-left:16px;padding-right:16px}
+  .header-content{padding:14px 0}
 }
+
+/* FIX: chip/etiqueta no se sale del borde en títulos largos */
+.project .project-head{
+  display:flex;
+  flex-wrap:wrap;              /* permite que el chip baje de línea */
+  align-items:flex-start;
+  gap:10px 12px;               /* gap vertical y horizontal */
+  justify-content:flex-start;  /* evita empujar fuera */
+}
+
+.project .project-head h3{
+  flex:1 1 260px;              /* el título ocupa el ancho disponible */
+  min-width:0;                 /* CRUCIAL para que pueda “encogerse” */
+  margin:0;
+  line-height:1.2;
+}
+
+.project .chip{ margin-left:auto; max-width:100%; white-space:normal; }
+
