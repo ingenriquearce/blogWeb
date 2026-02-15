@@ -400,3 +400,11 @@ main{
 
 .project .chip{ margin-left:auto; max-width:100%; white-space:normal; }
 
+.timeline-card{
+  cursor: pointer;
+}
+
+.timeline-card:focus-visible{
+  outline: 2px solid var(--acc);
+  outline-offset: 3px;
+}

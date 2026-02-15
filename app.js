@@ -47,3 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById("y");
   if (y) y.textContent = String(new Date().getFullYear());
 });
+
+document.querySelectorAll(".timeline-card[data-href]").forEach((card) => {
+  const href = card.getAttribute("data-href");
+  if (!href) return;
+
+  card.addEventListener("click", () => {
+    window.location.href = href;
+  });
+
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      window.location.href = href;
+    }
+  });
+});
