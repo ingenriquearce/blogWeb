@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-content">
@@ -47,8 +48,8 @@
           <h3>Contact</h3>
           <ul class="list">
             <li><a class="hero-text" href="mailto:ingenriquearce@gmail.com">ingenriquearce@gmail.com</a></li>
-            <li><a class="hero-text" href="Santa Cruz">Santa Cruz, Bolivia</a></li>
-            <li><a class="link" href="https://wa.me/59170898095">WhatsApp: +591 70898095</a></li>
+            <li><span class="hero-text">Santa Cruz, Bolivia</span></li>
+            <li><a class="link" href="https://wa.me/59170898095" target="_blank" rel="noopener">WhatsApp: +591 70898095</a></li>
             <li><a class="link" href="https://www.instagram.com/enriquearcea/" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </article>
@@ -59,60 +60,61 @@
             Software Automation Engineer focused on building intelligent systems, automating processes, and efficient data pipelines.
           </p>
           <p>
-            I also build automated data pipelines to support analytics and operations, handling large data volumes with Pandas, Polars, PySpark, Power Query, and Power BI. 
+            I also build automated data pipelines to support analytics and operations, handling large data volumes with Pandas, Polars, PySpark, Power Query, and Power BI.
           </p>
         </article>
-
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <ul class="timeline">
-      <li class="timeline-card" data-href="experience/banco-ganadero.html" tabindex="0" role="link" aria-label="Open Banco Ganadero experience">
-        <div class="time-head">
-          <span class="time-role">Technology Risk Auditor</span>
-          <span class="time-org">Banco Ganadero</span>
-        </div>
-        <p class="time-desc">
-          Designed and automated internal audit processes through Power BI dashboards and FastAPI-based web apps.
-          Delivered data-driven insights using Python, SQL (Oracle/SQLite), and Power Query to identify risks and improve efficiency across departments.
-        </p>
-      </li>
+    <section id="experience" class="panel" role="tabpanel" aria-label="Professional Experience">
+      <h2>Professional Experience</h2>
 
-      <li class="timeline-card" data-href="experience/petrobras.html" tabindex="0" role="link" aria-label="Open Petrobras experience">
-        <div class="time-head">
-          <span class="time-role">Digital Transformation Engineer</span>
-          <span class="time-org">PETROBRAS Bolivia</span>
-        </div>
-        <p class="time-desc">
-          Led and developed digital transformation initiatives using Power BI, Power Apps, Power Automate, Python, and SQL Server.
-          Built automated pipelines, Power Platform apps, and scalable data architectures that reduced manual work and strengthened decision-making across business units.
-        </p>
-      </li>
+      <ul class="timeline">
+        <li class="timeline-card" data-href="experience/banco-ganadero.html" tabindex="0" role="link" aria-label="Open Banco Ganadero experience">
+          <div class="time-head">
+            <span class="time-role">Technology Risk Auditor</span>
+            <span class="time-org">Banco Ganadero</span>
+          </div>
+          <p class="time-desc">
+            Designed and automated internal audit processes through Power BI dashboards and FastAPI-based web apps.
+            Delivered data-driven insights using Python, SQL (Oracle/SQLite), and Power Query to identify risks and improve efficiency across departments.
+          </p>
+        </li>
 
-      <li class="timeline-card" data-href="experience/metatel.html" tabindex="0" role="link" aria-label="Open Metatel experience">
-        <div class="time-head">
-          <span class="time-role">Data Analyst</span>
-          <span class="time-org">BPO Center – Metatel</span>
-        </div>
-        <p class="time-desc">
-          Developed data flows and transformations using Power Query and Excel.
-          Unified multiple data sources into structured analytics models for performance reporting and operational dashboards.
-        </p>
-      </li>
+        <li class="timeline-card" data-href="experience/petrobras.html" tabindex="0" role="link" aria-label="Open Petrobras experience">
+          <div class="time-head">
+            <span class="time-role">Digital Transformation Engineer</span>
+            <span class="time-org">PETROBRAS Bolivia</span>
+          </div>
+          <p class="time-desc">
+            Led and developed digital transformation initiatives using Power BI, Power Apps, Power Automate, Python, and SQL Server.
+            Built automated pipelines, Power Platform apps, and scalable data architectures that reduced manual work and strengthened decision-making across business units.
+          </p>
+        </li>
 
-      <li class="timeline-card" data-href="experience/casa-elena.html" tabindex="0" role="link" aria-label="Open Casa Elena experience">
-        <div class="time-head">
-          <span class="time-role">System Analyst</span>
-          <span class="time-org">Casa Elena KOD</span>
-        </div>
-        <p class="time-desc">
-          Improved website interfaces with JavaScript and CSS.
-          Created SQL views and managed large-scale data transformations for executive reporting and business analysis.
-        </p>
-      </li>
-    </ul>
+        <li class="timeline-card" data-href="experience/metatel.html" tabindex="0" role="link" aria-label="Open Metatel experience">
+          <div class="time-head">
+            <span class="time-role">Data Analyst</span>
+            <span class="time-org">BPO Center – Metatel</span>
+          </div>
+          <p class="time-desc">
+            Developed data flows and transformations using Power Query and Excel.
+            Unified multiple data sources into structured analytics models for performance reporting and operational dashboards.
+          </p>
+        </li>
 
+        <li class="timeline-card" data-href="experience/casa-elena.html" tabindex="0" role="link" aria-label="Open Casa Elena experience">
+          <div class="time-head">
+            <span class="time-role">System Analyst</span>
+            <span class="time-org">Casa Elena KOD</span>
+          </div>
+          <p class="time-desc">
+            Improved website interfaces with JavaScript and CSS.
+            Created SQL views and managed large-scale data transformations for executive reporting and business analysis.
+          </p>
+        </li>
+      </ul>
 
       <div class="card stack">
         <h3>Technical Stack &amp; Tools Used</h3>
@@ -166,17 +168,16 @@
         </div>
       </div>
 
-      <!-- Certificates (reubicado aquí, sin pestaña extra) -->
       <div class="card stack">
         <h3>Certificates</h3>
         <ul class="list">
           <li><a class="link" href="certificates/python-intermedio.pdf" target="_blank" rel="noopener">Python Intermediate</a></li>
-          <li><a class="link" href="certificates/matplotlib_seaborn2024.pdf" target="_blank" rel="noopener">Matplotlib & Seaborn</a></li>
+          <li><a class="link" href="certificates/matplotlib_seaborn2024.pdf" target="_blank" rel="noopener">Matplotlib &amp; Seaborn</a></li>
           <li><a class="link" href="certificates/powerbi.pdf" target="_blank" rel="noopener">Power BI</a></li>
           <li><a class="link" href="certificates/bds.pdf" target="_blank" rel="noopener">Databases</a></li>
           <li><a class="link" href="certificates/fundamentos-ingenieria-datos.pdf" target="_blank" rel="noopener">Data Engineering Fundamentals</a></li>
           <li><a class="link" href="certificates/fundamentos-etl.pdf" target="_blank" rel="noopener">ETL Fundamentals</a></li>
-          <li><a class="link" href="certificates/terminal-linea-comandos.pdf" target="_blank" rel="noopener">Terminal & CMD</a></li>
+          <li><a class="link" href="certificates/terminal-linea-comandos.pdf" target="_blank" rel="noopener">Terminal &amp; CMD</a></li>
           <li><a class="link" href="certificates/analisis-negocios-data-science.pdf" target="_blank" rel="noopener">Business Analytics</a></li>
           <li><a class="link" href="certificates/excel-intermedio.pdf" target="_blank" rel="noopener">Excel Intermediate</a></li>
           <li><a class="link" href="https://cenace.upsa.edu.bo/certificados/x84afkeusv0mi1xhzffk0ithqswf9v7e" target="_blank" rel="noopener">CENACE — Advanced English</a></li>
@@ -228,8 +229,6 @@
 
           <div class="actions">
             <a class="btn small" href="projects/natural-gas-on-time.html">View details</a>
-            <!-- Opcional: si tenés repo, pegalo acá -->
-            <!-- <a class="btn small ghost" href="https://github.com/..." target="_blank" rel="noopener">View repo</a> -->
           </div>
         </article>
 
@@ -267,8 +266,6 @@
 
           <div class="actions">
             <a class="btn small" href="projects/football-school.html">View details</a>
-            <!-- Opcional: link real del sitio -->
-            <!-- <a class="btn small ghost" href="https://..." target="_blank" rel="noopener">Live site</a> -->
           </div>
         </article>
 
@@ -307,8 +304,6 @@
 
           <div class="actions">
             <a class="btn small" href="projects/customer-segmentation.html">View details</a>
-            <!-- Opcional: demo si existe -->
-            <!-- <a class="btn small ghost" href="https://..." target="_blank" rel="noopener">View demo</a> -->
           </div>
         </article>
 
@@ -327,14 +322,10 @@
 
           <div class="actions">
             <a class="btn small" href="projects/personal-finance.html">View details</a>
-            <!-- Opcional: si publicaste el reporte -->
-            <!-- <a class="btn small ghost" href="https://app.powerbi.com/..." target="_blank" rel="noopener">Open report</a> -->
           </div>
         </article>
-
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -343,13 +334,11 @@
     </div>
   </footer>
 
-  <!-- Theme switcher -->
   <div class="theme-switcher" aria-label="Theme switcher">
     <button class="theme-btn" data-theme="light" aria-pressed="true">Light</button>
     <button class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
   </div>
 
-  <!-- External JS -->
   <script src="app.js" defer></script>
 </body>
 </html>
