@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>MOISES Project — Enrique Arce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .photo{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:color-mix(in oklab,var(--bg), #fff 5%);
+      display:block;
+    }
+    @media (max-width: 620px){ .photo{height:220px} }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1 class="brand-title">Enrique Arce</h1>
+          <p class="brand-sub">Computer Engineer</p>
+        </div>
+      </div>
+
+      <nav class="tabs" aria-label="Project navigation">
+        <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+        <a class="btn" href="../certificates/MOISES_certificate.PDF" target="_blank" rel="noopener">Open certificate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel is-visible" aria-label="MOISES Project">
+      <h2>MOISES Project</h2>
+
+      <div class="notice">
+        UPSA × Texas A&amp;M Energy Institute collaboration. Advanced analytics and ML to model Bolivia’s energy-transition scenarios with transparent assumptions and reproducible experiments.
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Process</h3>
+          <ul class="list">
+            <li>Scope &amp; objectives definition (what questions the model must answer).</li>
+            <li>Data understanding + cleaning rules and consistency checks.</li>
+            <li>Feature engineering and scenario design.</li>
+            <li>Modeling + evaluation with traceable experiments.</li>
+            <li>Insights packaging: visuals + narrative for decision-making.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Skills &amp; Tools</h3>
+
+          <h4>Skills developed</h4>
+          <div class="pillbox">
+            <span class="pill">Scenario modeling</span>
+            <span class="pill">ML experimentation</span>
+            <span class="pill">Feature engineering</span>
+            <span class="pill">Data storytelling</span>
+            <span class="pill">Reproducibility</span>
+          </div>
+
+          <h4>Tools used</h4>
+          <div class="pillbox">
+            <span class="pill">Python</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">Jupyter</span>
+            <span class="pill">Git</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn small" href="../certificates/MOISES_certificate.pdf" target="_blank" rel="noopener">Open certificate</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="card stack" style="margin-top:18px;">
+        <h3>Photos</h3>
+        <div class="grid" style="margin-top:12px;">
+          <article class="card">
+            <img class="photo" src="../images/projects/moises/trip_01.jpg" alt="MOISES trip photo 1" />
+            <p style="margin:10px 0 0;color:var(--muted);">Trip / collaboration moment</p>
+          </article>
+
+          <article class="card">
+            <img class="photo" src="../images/projects/moises/trip_02.jpg" alt="MOISES trip photo 2" />
+            <p style="margin:10px 0 0;color:var(--muted);">Project experience / event</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Enrique Arce</p>
+    </div>
+  </footer>
+
+  <div class="theme-switcher" aria-label="Theme switcher">
+    <button class="theme-btn" data-theme="light" aria-pressed="true">Light</button>
+    <button class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
+  </div>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>
