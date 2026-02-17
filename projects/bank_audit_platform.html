@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bank Audit Platform — Enrique Arce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1 class="brand-title">Enrique Arce</h1>
+          <p class="brand-sub">Computer Engineer</p>
+        </div>
+      </div>
+
+      <nav class="tabs" aria-label="Project navigation">
+        <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel is-visible" aria-label="Bank Audit Platform">
+      <h2>Bank Audit Platform</h2>
+
+      <div class="notice">
+        Internal audit automation web app that turns monthly compliance checks into downloadable main files
+        (Excel/Word/ZIP), with traceable rules, repeatable runs, and reduced manual workload across audit teams.
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>What it automates (modules)</h3>
+          <ul class="list">
+            <li><strong>Cuentas Inmovilizadas → TGN (Cruce):</strong> Upload CA/CC captaciones + operaciones TGN + “Mayores 500” + fechas → generates a consolidated Excel (sheet <strong>CRUCE</strong>) and supporting analysis sheets for audit review.</li>
+            <li><strong>Retenciones:</strong> Runs the retentions flow and produces standardized artifacts:
+              <strong>Retenciones_YYYYMMDD.xlsx</strong>, <strong>Extractos_CtasConRetencion_YYYYMMDD.xlsx</strong>, and <strong>PorCuenta_YYYYMMDD.zip</strong>.</li>
+            <li><strong>Fallas de Caja:</strong> Calculates metrics/saldos for the period and generates audit workpapers:
+              <strong>A2 Análisis Contable</strong> (Excel) and <strong>A4 Verificación de Comprobantes</strong> (Excel) from voucher evidence.</li>
+            <li><strong>Anexo 1 — Activos de Primera Calidad:</strong> Upload Situación Patrimonial + Cartera Calificación + ASF-510 + Central O/P → fills the template and outputs <strong>Anexo_1_DDMMYYYY.xlsx</strong>.</li>
+            <li><strong>Encaje Legal:</strong> Upload captaciones (CA/CC/DPF) + Situación Patrimonial + Encaje Legal → builds <strong>Encaje_Legal_AAAA_MM.xlsx</strong> and includes rule-based calculations/insertions used in the audit paper.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Process (how a run works)</h3>
+          <ul class="list">
+            <li><strong>Input validation:</strong> controlled file types, required fields, date parsing, and predictable naming.</li>
+            <li><strong>ETL execution:</strong> fast extraction (incl. Polars where it matters), transformation/merges (Pandas), and database pulls (Oracle/SQLite) for reconciliation.</li>
+            <li><strong>Controls &amp; traceability:</strong> consistent logging, reproducible outputs, and purge/clean of output folders per run to avoid mixing periods.</li>
+            <li><strong>Template-driven deliverables:</strong> writes into pre-approved Excel templates (OpenPyXL/XlsxWriter) and generates Word reports via Windows Word COM when required.</li>
+            <li><strong>Evidence handling:</strong> supports voucher packs in .docx and converts them into structured verification tables for audit documentation.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Smart extraction (AI-assisted evidence)</h3>
+          <ul class="list">
+            <li><strong>Voucher parsing from images:</strong> extracts key fields (date, receipt number, amounts, glosa) using a local vision model (Ollama) with strict JSON outputs (LangChain parsers).</li>
+            <li><strong>Glosa normalization:</strong> uses a LangGraph flow to detect and standardize dates inside free-text “glosa” (reduces manual interpretation errors).</li>
+            <li><strong>Result:</strong> faster A4 verification and fewer “copy/paste” mistakes when building the paper trail.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Skills developed</h3>
+          <div class="pillbox">
+            <span class="pill">Audit process automation</span>
+            <span class="pill">ETL design</span>
+            <span class="pill">Reconciliation logic</span>
+            <span class="pill">Data quality controls</span>
+            <span class="pill">Template-driven reporting</span>
+            <span class="pill">API design</span>
+            <span class="pill">Evidence workflows</span>
+            <span class="pill">Logging &amp; traceability</span>
+            <span class="pill">LLM extraction pipelines</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Tools &amp; stack</h3>
+          <div class="pillbox">
+            <span class="pill">Python</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">Uvicorn</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">Polars</span>
+            <span class="pill">OpenPyXL</span>
+            <span class="pill">XlsxWriter</span>
+            <span class="pill">OracleDB</span>
+            <span class="pill">SQLAlchemy</span>
+            <span class="pill">SQLite</span>
+            <span class="pill">PyWin32 (Word COM)</span>
+            <span class="pill">XLWings</span>
+            <span class="pill">python-docx</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">LangGraph</span>
+            <span class="pill">Ollama</span>
+          </div>
+          <p>
+            Architecture: FastAPI routers per module + application services + infrastructure (SQL/templates/IO) + shared utilities,
+            with the static frontend served directly by the backend for a single “internal tool” deployment.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Enrique Arce</p>
+    </div>
+  </footer>
+
+  <div class="theme-switcher" aria-label="Theme switcher">
+    <button class="theme-btn" data-theme="light" aria-pressed="true">Light</button>
+    <button class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
+  </div>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>
